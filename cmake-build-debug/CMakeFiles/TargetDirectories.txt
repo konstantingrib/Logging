@@ -1,0 +1,3 @@
+/home/kg/Git/Logging/cmake-build-debug/CMakeFiles/Logging.dir
+/home/kg/Git/Logging/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kg/Git/Logging/cmake-build-debug/CMakeFiles/rebuild_cache.dir
