@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 project(Logging)
 
 set(CMAKE_CXX_STANDARD 14)
-add_executable(Logging main.cpp)
+add_executable(main.cpp)
 ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
 
 set(Boost_USE_STATIC_LIBS ON)

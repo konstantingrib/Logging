@@ -1,20 +1,24 @@
-//g++ -O3 -o log.exe log.cpp -lboost_log -lboost_thread -lboost_filesystem
+//g++ -O3 -o log.exe log.cpp -lboost_log -lboost_thread -lboost_filesystem -lboost_log_setup
 //libboost_log.a und libboost_thread.a fuer trivial Textausgabe
 
-#define BOOST_LOG_DYN_LINK 1
+#define BOOST_LOG_DYN_LINK
+#define BOOST_ALL_DYN_LINK
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>        //Fuer das Logging selber
 #include <boost/log/expressions.hpp>    //Fuer die Filter
-
 //Fuer Ablage in Datei
+
 #include <boost/log/sinks/text_file_backend.hpp>
 #include <boost/log/utility/setup/file.hpp>
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/sources/record_ostream.hpp>
+#include <boost/log/utility/setup/from_stream.hpp>
 
 //Fuer Zeitangabe
 #include <boost/log/support/date_time.hpp>
+
+#include <fstream>
 
 namespace logging = boost::log;
 namespace sinks = boost::log::sinks;
@@ -77,6 +81,7 @@ int main(int, char*[])
     cout << "Ausgabe erfolgt in einem Logging-File im selben Ordner" << endl;
 
     init();
+
     BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
     BOOST_LOG_TRIVIAL(debug) << "A debug severity message";
     BOOST_LOG_TRIVIAL(info) << "An informational severity message";
